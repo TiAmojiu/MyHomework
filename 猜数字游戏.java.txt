@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.Random;
+public class xy1 {
+ private static Scanner reader;
+public static void main(String[] args) {
+        reader = new Scanner(System.in);
+        Random random = new Random();
+       System.out.println("给你猜一个1-100的整数-.-!");//产生随机数
+        int realNumber = random.nextInt(100) + 1;      //将随机数赋给realNumenr
+        int yourGuess;                                                    //定义猜测数
+        System.out.print("请输入你猜测的整数:");          //提示输入语句
+        yourGuess = reader.nextInt();                          //将猜测数赋给yourGuess
+        while (yourGuess!=realNumber)                         //循环比较猜测数和随机数大小
+        {                    
+            if (yourGuess > realNumber)                        //判断如果猜测数大于随机数
+            {
+                System.out.print("猜大了,再输入你的猜测:");//猜测数太大提示语句
+                yourGuess = reader.nextInt();
+            } 
+            else if (yourGuess < realNumber)
+             {               //判断如果猜测数小于随机数
+                       System.out.print("猜小了,再输入你的猜测:");//猜测数太小提示语句
+                        yourGuess = reader.nextInt();
+              }
+           }
+        System.out.print("恭喜你,猜对了.你猜的数字是:" + realNumber);//输出猜对数
+    }
+}
